@@ -112,7 +112,7 @@ class IncidentController extends Controller
             }
 
         }
-        
+
         // Add YT Link
         if ($request->get('yt_link') != null) {
 

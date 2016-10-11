@@ -44,7 +44,7 @@
 
             <div class="grid-boxes-in">
                 <div class="responsive-video">
-                    <iframe  src="https://www.youtube.com/embed/KI89SsWzYLk" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    <iframe  src="{{ $incident->videos()->first()->url }}" frameborder="0" scrolling="no" allowfullscreen></iframe>
                 </div>
 
                 <div class="grid-boxes-caption">
