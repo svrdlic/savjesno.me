@@ -85,6 +85,7 @@
 
                         @foreach($incidents as $incident)
 
+                            @if($incident->coordinate_x != null && $incident->coordinate_y != null)
                         var marker = map.addMarker({
                             lat: {{ $incident->coordinate_x }},
                             lng: {{ $incident->coordinate_y }},
@@ -93,6 +94,7 @@
                                 content: '<p><a href="{{ route('public.incident', ['slug' => $incident->slug]) }}">{{ $incident->title }}</a></p>'
                             }
                         });
+                        @endif
 
                         @endforeach
                     });
