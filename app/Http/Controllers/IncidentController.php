@@ -149,7 +149,7 @@ class IncidentController extends Controller
 
         }
 
-        $latest = Incident::orderBy('created_at', 'desc')->take(5)->get();
+        $latest = Incident::where('approved', true)->orderBy('created_at', 'desc')->take(5)->get();
 
         return view('pages.incident.show', compact('incident', 'latest'));
 

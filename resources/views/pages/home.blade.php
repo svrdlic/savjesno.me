@@ -52,7 +52,7 @@
                     <ul class="list-inline grid-boxes-news">
                         <li><i class="fa fa-user"></i> <a href="#">{{ $incident->user->username }}</a></li>
                         <li>|</li>
-                        <li><i class="fa fa-clock-o"></i> {{ date('d-m-Y', strtotime($incident->occurred_at)) }}</li>
+                        <li><i class="fa fa-clock-o"></i> {{ date('d-m-Y', strtotime($incident->created_at)) }}</li>
                         <li>|</li>
                         <li><a href="{{ route('public.incident', ['slug' => $incident->slug]) }}"><i class="fa fa-comments-o"></i> 0</a></li>
                     </ul>

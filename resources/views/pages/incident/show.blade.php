@@ -62,8 +62,9 @@
                             <h3><a href="{{ route('public.incident', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h3>
                             <small>{{ date('d, M Y', strtotime($post->created_at)) }} / <i class="fa fa-comment"></i> 0</small>
                         </li>
-                    </ul>
                     @endforeach
+
+                    </ul>
 
                 </div>
                 <!-- End Blog Sidebar -->
