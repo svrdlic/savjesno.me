@@ -54,58 +54,65 @@ class IncidentController extends Controller
         $incident->violations()->attach($request->get('violations'));
 
         // Add Plates
-        foreach ($request->get('plates') as $plate) {
+        if (!empty($request->get('plates'))) {
 
-            $plate = strtoupper(trim($plate));
-            $plateModel = Plate::where('plate', '=', $plate)->first();
+            foreach ($request->get('plates') as $plate) {
 
-            if (empty($plateModel)) {
+                $plate = strtoupper(trim($plate));
+                $plateModel = Plate::where('plate', '=', $plate)->first();
 
-                $plateModel = new Plate;
-                $cityCode = substr($plate, 0, 2);
+                if (empty($plateModel)) {
 
-                $city = City::where('code', $cityCode)->first();
-                $cityId = null;
+                    $plateModel = new Plate;
+                    $cityCode = substr($plate, 0, 2);
 
-                if (!empty($city)) {
-                    $cityId = $city->id;
+                    $city = City::where('code', $cityCode)->first();
+                    $cityId = null;
+
+                    if (!empty($city)) {
+                        $cityId = $city->id;
+                    }
+
+                    $plateModel->city_id = $cityId;
+                    $plateModel->plate = $plate;
+                    $plateModel->save();
+
                 }
 
-                $plateModel->city_id = $cityId;
-                $plateModel->plate = $plate;
-                $plateModel->save();
+                $incident->plates()->attach($plateModel);
 
             }
 
-            $incident->plates()->attach($plateModel);
-
         }
-
 
         // Add Uploads
-        foreach ($request->file('uploads') as $upload) {
+        if (!empty($request->file('uploads'))) {
 
-            $originalFilename = $upload->getClientOriginalName();
-            $extension = $upload->getClientOriginalExtension();
-            $isVideo = false;
+            foreach ($request->file('uploads') as $upload) {
 
-            if ($extension == 'mp4') {
-                $isVideo = true;
+                $originalFilename = $upload->getClientOriginalName();
+                $extension = $upload->getClientOriginalExtension();
+                $isVideo = false;
+
+                if ($extension == 'mp4') {
+                    $isVideo = true;
+                }
+
+                $serverFilename = $upload->store('uploads');
+                $token = str_random(64);
+
+                $uploadModel = new Upload;
+                $uploadModel->incident_id = $incident->id;
+                $uploadModel->original_filename = $originalFilename;
+                $uploadModel->storage_filename = $serverFilename;
+                $uploadModel->token = $token;
+                $uploadModel->is_video = $isVideo;
+                $uploadModel->save();
+
             }
 
-            $serverFilename = $upload->store('uploads');
-            $token = str_random(64);
-
-            $uploadModel = new Upload;
-            $uploadModel->incident_id = $incident->id;
-            $uploadModel->original_filename = $originalFilename;
-            $uploadModel->storage_filename = $serverFilename;
-            $uploadModel->token = $token;
-            $uploadModel->is_video = $isVideo;
-            $uploadModel->save();
-
         }
-
+        
         // Add YT Link
         if ($request->get('yt_link') != null) {
 
