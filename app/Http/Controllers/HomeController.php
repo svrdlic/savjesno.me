@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-       // $this->middleware('auth');
+
     }
 
     /**
@@ -24,14 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $incidents = Incident::all();
-
-        return view('pages.home', compact('incidents'));
+        return $this->getHome();
     }
 
     public function getHome()
     {
-        $incidents = Incident::all();
+        $incidents = Incident::where('approved', true)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
 
         return view('pages.home', compact('incidents'));
     }
