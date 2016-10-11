@@ -1,0 +1,88 @@
+/* Add here all your css styles (customizations) */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 393px;
+}
+.footer-v1 {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    height: 393px;
+}
+.header .logo svg {
+    z-index: 1;
+    margin: 20px 0;
+    position: relative;
+}
+svg {
+    vertical-align: middle;
+}
+.header {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#4a4a4a, #020202); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#4a4a4a, #020202); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#4a4a4a, #020202); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#4a4a4a, #020202); /* Standard syntax */
+}
+.blog_masonry_3col{
+    background: #f7f5f5;
+}
+.btn-u {
+    background: #1D1D1D;
+}
+.btn-u:hover {
+    background: #FFE50F;
+    color: #1d1d1d;
+}
+.headline h2 {
+    border-bottom: 2px solid #ffe50f;
+}
+.header .navbar-nav > li > a {
+    color: #f7f5f5;
+}
+.header .nav > li > .search {
+    color: #f7f5f5;
+    background: #383735;
+}
+#topcontrol:hover {
+    background: #ffe50f;
+    color: #1d1d1d;
+}
+.blog_masonry_3col h3 a {
+    color:#ffffff;
+}
+.blog_masonry_3col .grid-boxes-caption {
+    background: #1D1D1D;
+}
+.blog_masonry_3col ul.grid-boxes-news li, .blog_masonry_3col ul.grid-boxes-news li a {
+    color:#ffe50f;
+}
+.blog_masonry_3col h3 a:hover {
+    color: #ffffff;
+}
+.blog_masonry_3col ul.grid-boxes-news li a:hover {
+    color:#ffe50f;
+}
+.blog_masonry_3col p {
+    color: #c1bfbf;
+}
+.btn-submit{
+    border: 4px solid #ffe50f;
+}
+a.yellow-color {
+    color: #fff;
+    text-decoration: underline;
+}
+a.yellow-color:hover {
+    color: #ffe50f;
+}
+.btn-facebook , .btn-twitter {
+    text-decoration: none;
+}
+.sky-form label input.required, .sky-form label select.required {
+
+}
