@@ -5,13 +5,13 @@ html {
 }
 body {
     font-family: 'Open Sans', sans-serif;
-    margin-bottom: 393px;
+    margin-bottom: 371px;
 }
 .footer-v1 {
     position:absolute;
     bottom: 0;
     width: 100%;
-    height: 393px;
+    height: 371px;
 }
 .header .logo svg {
     z-index: 1;

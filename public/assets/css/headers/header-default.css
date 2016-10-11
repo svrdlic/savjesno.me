@@ -168,6 +168,7 @@ body.header-fixed-space-default {
 	height: 100%;
 	min-height: 40px;
 	min-width: 100px;
+	max-width: 300px;
 	display: table-cell;
 	vertical-align: middle;
 }
