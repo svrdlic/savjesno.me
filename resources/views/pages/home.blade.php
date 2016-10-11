@@ -83,14 +83,18 @@
                             zoom: 9
                         });
 
+                        @foreach($incidents as $incident)
+
                         var marker = map.addMarker({
-                            lat: 42.7040591,
-                            lng: 18.8334565,
-                            title: 'Savjesno.me',
+                            lat: {{ $incident->coordinate_x }},
+                            lng: {{ $incident->coordinate_y }},
+                            title: '{{ $incident->title }}',
                             infoWindow: {
-                                content: '<p><a href="https://codingo.me">Hello there</a></p>'
+                                content: '<p><a href="{{ route('public.incident', ['slug' => $incident->slug]) }}">{{ $incident->title }}</a></p>'
                             }
                         });
+
+                        @endforeach
                     });
                 }
 

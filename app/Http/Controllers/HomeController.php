@@ -33,6 +33,8 @@ class HomeController extends Controller
                         ->orderBy('created_at', 'desc')
                         ->get();
 
+
+
         return view('pages.home', compact('incidents'));
     }
 
