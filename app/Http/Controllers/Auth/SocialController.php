@@ -53,8 +53,12 @@ class SocialController extends Controller
                 $newSocialUser = new User;
                 $newSocialUser->email = $email;
                 $name = explode(' ', $user->name);
-                $newSocialUser->first_name = $name[0];
-                $newSocialUser->last_name = $name[1];
+                if (count($name) == 1) {
+                    $newSocialUser->first_name = $name[0];
+                }
+                if (count($name) == 2) {
+                    $newSocialUser->last_name = $name[1];
+                }
                 $newSocialUser->password = bcrypt(str_random(16));
                 $newSocialUser->username = 'Korisnik_' . str_random(8);
                 $newSocialUser->save();
