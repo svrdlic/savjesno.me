@@ -23,6 +23,8 @@ Route::group(['middleware' => []], function ()
 
     $p = 'public.';
     Route::get('prekrsaj/{slug}', ['as' => $p . 'incident', 'uses' => 'IncidentController@show']);
+
+    Route::get('uslovi-koriscenja', ['as' => 'terms', 'uses' => 'HomeController@terms']);
 });
 
 Route::group(['middleware' => ['auth']], function ()
