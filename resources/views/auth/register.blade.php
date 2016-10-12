@@ -100,7 +100,7 @@
                         <div class="col-lg-6 checkbox">
                             <label>
                                 <input type="checkbox">
-                                {{ trans('register.i_read') }} <a href="{{ route('terms') }}" class="">uslove</a> i <a hre="#">politiku privatnosti</a>.
+                                {{ trans('register.i_read') }} <a href="{{ route('terms') }}" class="">uslove</a> i <a href="{{ route('privacy') }}">politiku privatnosti</a>.
                             </label>
                         </div>
                         <div class="col-lg-6 text-right">

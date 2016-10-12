@@ -25,6 +25,7 @@ Route::group(['middleware' => []], function ()
     Route::get('prekrsaj/{slug}', ['as' => $p . 'incident', 'uses' => 'IncidentController@show']);
 
     Route::get('uslovi-koriscenja', ['as' => 'terms', 'uses' => 'HomeController@terms']);
+    Route::get('politika-privatnosti', ['as' => 'privacy', 'uses' => 'HomeController@privacy']);
 });
 
 Route::group(['middleware' => ['auth']], function ()

@@ -225,7 +225,7 @@
                     <div class="col-md-6">
                         <p>
                             2016 &copy; Sva prava zadržana.
-                            <a href="#" class="yellow-color">Politika privatnosti</a> | <a href="{{ route('terms') }}" class="yellow-color">Uslovi korišćenja</a>
+                            <a href="{{ route('privacy') }}" class="yellow-color">Politika privatnosti</a> | <a href="{{ route('terms') }}" class="yellow-color">Uslovi korišćenja</a>
                         </p>
                     </div>
 
