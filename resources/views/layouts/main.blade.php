@@ -8,8 +8,17 @@
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Ivan Radunovic">
+
+    <meta name="description" itemprop="description" content="Many users surf the web with disabled JavaScript or blocked GA universal code, with this solution you&#039;ll be able to log them all.">
+    <meta name="keywords" itemprop="keywords" content="Google Analytics,Measurement Protocol,disabled JavaScript,noJS,blocked ga,">
+
+    <meta property="og:url" content="https://savjesno.me">
+    <meta property="og:title" content="Prijavi saobraćajne prekršaje na putevima u Crnoj Gori">
+    <meta property="og:description" content="Savjesno.me je građanska inicijativa i nije povezana sa državnim institucijama. Svi podaci pondosioca ostaju zaštićeni i nisu vidljivi. Smatramo da ovakav portal može da popravi saobraćajnu kulturu u Crnoj Gori, ukoliko želiš da daš doprinos javi nam se.">
+    <meta property="og:image" content="https://savjesno.me/assets/img/savjesno-og-img.png">
+    <meta property="og:site_name" content="Savjesno.me">
+    <meta property="og:image:type" content="image/png">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/assets/img/favicon.png">
