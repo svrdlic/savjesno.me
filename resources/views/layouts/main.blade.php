@@ -65,7 +65,7 @@
                 <ul class="loginbar pull-right">
                     <li><a href="#">Podgorica {{ \Carbon\Carbon::now() }}</a></li>
                     <li class="topbar-devider"></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="{{ route('faq') }}">FAQ</a></li>
                     <li class="topbar-devider"></li>
                     @if(!auth()->check())
                     <li><a href="{{ route('login') }}">Login</a></li>
