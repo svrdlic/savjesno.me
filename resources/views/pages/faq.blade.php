@@ -32,7 +32,7 @@
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 Sankcionisanje prekršaja može obavljati samo MUP, te stoga naša dužnost je da izvršimo građanski pritisak na institucije sistema kako bi one počele da procesuiraju prijavljene prekršaje.
-                                Ako se ovdje okupi dovoljan broj građana ideja će da uspije i nadamo se da će to uticati na manje nesreće na našim putevima.
+                                Ako se ovdje okupi dovoljan broj građana ideja će da uspije i nadamo se da će to dovesti do manje nesreća na našim putevima.
                             </div>
                         </div>
                     </div>
