@@ -53,7 +53,7 @@ class SocialController extends Controller
                 $newSocialUser = new User;
                 $newSocialUser->email = $email;
                 $name = explode(' ', $user->name);
-                if (count($name) == 1) {
+                if (count($name) >= 1) {
                     $newSocialUser->first_name = $name[0];
                 }
                 if (count($name) == 2) {
