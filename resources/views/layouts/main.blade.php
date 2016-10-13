@@ -7,7 +7,7 @@
 
     <!-- Meta -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="author" content="Ivan Radunovic">
 
     <meta name="description" itemprop="description" content="Many users surf the web with disabled JavaScript or blocked GA universal code, with this solution you&#039;ll be able to log them all.">
