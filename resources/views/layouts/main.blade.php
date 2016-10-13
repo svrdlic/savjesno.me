@@ -93,6 +93,9 @@
             <div class="container">
                 <ul class="nav navbar-nav">
 
+                    <li>
+                        <a href="http://forum.savjesno.me">Forum</a>
+                    </li>
                     <li class="">
                         <a href="{{ route('incident.index') }}">Prijavi prekršaj</a>
                     </li>
