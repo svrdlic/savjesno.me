@@ -10,9 +10,15 @@
                 <div class="col-md-9">
                     <!-- News v3 -->
                     <div class="news-v3 bg-color-white margin-bottom-30">
+                        @if($incident->videos()->count() != 0 )
                         <div class="responsive-video">
                             <iframe  src="{{ $incident->videos()->first()->url }}" frameborder="0" scrolling="no" allowfullscreen></iframe>
                         </div>
+                        @else
+                        <div class="blog-img">
+                            <img class="img-responsive" src="/{{ $incident->getFirstImageUrl() }}">
+                        </div>
+                        @endif
                         <div class="news-v3-in">
                             <ul class="list-inline posted-info">
                                 <li><i class="fa fa-user"></i> <a href="#">{{ $incident->user->username }}</a></li>

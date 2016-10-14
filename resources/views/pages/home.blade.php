@@ -43,9 +43,13 @@
                 @endif
 
             <div class="grid-boxes-in">
+                @if ($incident->videos()->count() != 0)
                 <div class="responsive-video">
                     <iframe  src="{{ $incident->videos()->first()->url }}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" scrolling="no" allowfullscreen></iframe>
                 </div>
+                @else
+                <img class="img-responsive" src="/{{ $incident->getFirstImageUrl() }}">
+                @endif
 
                 <div class="grid-boxes-caption">
                     <h3><a href="{{ route('public.incident', ['slug' => $incident->slug]) }}">{{ $incident->title }}</a></h3>

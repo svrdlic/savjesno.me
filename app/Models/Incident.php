@@ -27,4 +27,15 @@ class Incident extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function uploads()
+    {
+        return $this->hasMany(Upload::class);
+    }
+
+    public function getFirstImageUrl()
+    {
+        $image = $this->uploads()->where('is_video', 0)->first();
+
+        return $image->storage_filename;
+    }
 }
