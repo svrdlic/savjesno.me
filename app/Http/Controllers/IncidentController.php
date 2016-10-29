@@ -58,31 +58,33 @@ class IncidentController extends Controller
 
             foreach ($request->get('plates') as $plate) {
 
-                $plate = strtoupper(trim($plate));
-                $plateModel = Plate::where('plate', '=', $plate)->first();
+                if ( !empty( $plate ) ){
 
-                if (empty($plateModel)) {
+                    $plate = strtoupper(trim($plate));
+                    $plateModel = Plate::where('plate', '=', $plate)->first();
 
-                    $plateModel = new Plate;
-                    $cityCode = substr($plate, 0, 2);
+                    if (empty($plateModel)) {
 
-                    $city = City::where('code', $cityCode)->first();
-                    $cityId = null;
+                        $plateModel = new Plate;
+                        $cityCode = substr($plate, 0, 2);
 
-                    if (!empty($city)) {
-                        $cityId = $city->id;
+                        $city = City::where('code', $cityCode)->first();
+                        $cityId = null;
+
+                        if (!empty($city)) {
+                            $cityId = $city->id;
+                        }
+
+                        $plateModel->city_id = $cityId;
+                        $plateModel->plate = $plate;
+                        $plateModel->save();
+
                     }
 
-                    $plateModel->city_id = $cityId;
-                    $plateModel->plate = $plate;
-                    $plateModel->save();
+                    $incident->plates()->attach($plateModel);
 
                 }
-
-                $incident->plates()->attach($plateModel);
-
             }
-
         }
 
         // Add Uploads
