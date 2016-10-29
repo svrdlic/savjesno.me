@@ -13,7 +13,7 @@
     <meta name="description" itemprop="description" content="Many users surf the web with disabled JavaScript or blocked GA universal code, with this solution you&#039;ll be able to log them all.">
     <meta name="keywords" itemprop="keywords" content="Google Analytics,Measurement Protocol,disabled JavaScript,noJS,blocked ga,">
 
-    <meta property="og:url" content="@yield( 'og_url', 'https://savjesno.me' ) ">
+    <meta property="og:url" content="https://savjesno.me">
     <meta property="og:title" content="@yield( 'og_title', 'Prijavi saobraćajne prekršaje na putevima u Crnoj Gori' ) ">
     <meta property="og:description" content="@yield( 'og_description', 'Savjesno.me je građanska inicijativa i nije povezana sa državnim institucijama. Svi podaci pondosioca ostaju zaštićeni i nisu vidljivi. Smatramo da ovakav portal može da popravi saobraćajnu kulturu u Crnoj Gori, ukoliko želiš da daš doprinos javi nam se.' ) ">
     <meta property="og:image" content="@yield( 'og_image', 'https://savjesno.me/assets/img/savjesno-og-img.png' ) ">
