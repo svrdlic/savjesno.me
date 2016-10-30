@@ -38,4 +38,10 @@ class Incident extends Model
 
         return $image->storage_filename;
     }
+
+    public function countImages()
+    {
+        return $this->uploads()->where('is_video', 0)->count();
+
+    }
 }

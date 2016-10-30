@@ -1,5 +1,10 @@
 @extends('layouts.main')
 
+<!--=== OG meta tags ===-->
+@section('og_title', htmlentities($incident->title))
+@section('og_description', htmlentities($incident->description) )
+@section('og_image', ( $incident->countImages() > 0 )  ? '/'.$incident->getFirstImageUrl() : '')
+
 @section('content')
 
     <!--=== Blog Posts ===-->
