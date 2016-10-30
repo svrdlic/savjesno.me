@@ -3,7 +3,7 @@
 <!--=== OG meta tags ===-->
 @section('og_title', htmlentities($incident->title))
 @section('og_description', htmlentities($incident->description) )
-@section('og_image', ( $incident->countImages() > 0 )  ? '/'.$incident->getFirstImageUrl() : '')
+@section('og_image', ( $incident->countImages() > 0 )  ? env('APP_URL') . '/' . $incident->getFirstImageUrl() : '')
 
 @section('content')
 
