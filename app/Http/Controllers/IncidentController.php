@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Incident;
 use App\Models\Plate;
 use App\Models\Upload;
+use App\Models\User;
 use App\Models\Video;
+use App\Notifications\NewIncidentNotification;
 use App\Traits\DynamicRules;
 use App\Models\City;
 use App\Models\Violation;
@@ -124,6 +126,10 @@ class IncidentController extends Controller
             $video->save();
 
         }
+
+        // Notify Admin
+        $admin = User::where('email', env('ADMIN_EMAIL'))->first();
+        $admin->notify(new NewIncidentNotification());
 
         return redirect()->route('incident.status', ['token' => $incidentToken]);
 
