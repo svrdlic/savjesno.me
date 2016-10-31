@@ -96,6 +96,9 @@
                     <li>
                         <a href="http://forum.savjesno.me">Forum</a>
                     </li>
+                    <li>
+                        <a href="{{ route('partners') }}">Partneri</a>
+                    </li>
                     <li class="">
                         <a href="{{ route('incident.index') }}">Prijavi prekršaj</a>
                     </li>

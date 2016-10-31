@@ -86,3 +86,6 @@ a.yellow-color:hover {
 .sky-form label input.required, .sky-form label select.required {
 
 }
+.navbar-nav li a {
+    text-decoration: none;
+}

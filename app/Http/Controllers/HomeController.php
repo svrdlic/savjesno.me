@@ -50,4 +50,9 @@ class HomeController extends Controller
     {
         return view('pages.faq');
     }
+
+    public function partners()
+    {
+        return view('pages.partners');
+    }
 }
