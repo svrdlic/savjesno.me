@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use Illuminate\Http\Request;
 use Mockery\Exception\RuntimeException;
+use Illuminate\Validation\Rule;
 
 trait DynamicRules
 {
@@ -69,4 +70,44 @@ trait DynamicRules
 
         return $attributes;
     }
+
+
+    /**
+     * Profile rules
+     */
+
+    public function profileRules(Request $request)
+    {
+        $rules = [
+            'username' =>   [       'required','username','max:32',
+                                Rule::unique('users')->ignore(auth()->user()->id)
+                            ],
+            'email' =>      ['required','email','max:255',
+                                Rule::unique('users')->ignore(auth()->user()->id)
+                            ],
+            'upload' =>  'file|mimes:jpeg,png|max:5000'
+        ];
+
+        return $rules;
+    }
+
+    public function profileMessages(Request $request)
+    {
+        $messages = [
+            'username.required' => 'Korisničko ime je obavezno.',
+            'username.unique' => 'Korisničko ime je zauzeto.',
+            'email.required' => 'Email adresa je obavezna.'
+        ];
+
+        $upload = $request->file('upload');
+
+        if ($upload) {
+                $messages['upload.mimes'] = 'Format uploadovanog fajla ' . $upload->getClientOriginalName() . ' nije dobar, može biti: jpeg ili png.';
+        }
+
+
+        return $messages;
+
+    }
+
 }

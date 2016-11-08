@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email', 'password', 'username', 'first_name', 'last_name'
+        'email', 'password', 'username', 'first_name', 'last_name', 'slug'
     ];
 
     /**
@@ -37,4 +37,27 @@ class User extends Authenticatable
     {
         return $this->hasMany(Social::class);
     }
+
+
+    /**
+     * Create unique username slug
+     * @param $username
+     * @return string
+     */
+    public static  function createUniqueSlug( $username )
+    {
+
+        $slug = str_slug($username);
+
+        $profile = User::where('slug', '=', $slug)->first();
+
+        if ( !empty($profile) ) {
+            $slug .= '-' . str_random(3);
+        }
+
+        return $slug;
+    }
+
+
+
 }

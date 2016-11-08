@@ -28,13 +28,21 @@ Route::group(['middleware' => []], function ()
     Route::get('politika-privatnosti', ['as' => 'privacy', 'uses' => 'HomeController@privacy']);
     Route::get('faq', ['as' => 'faq', 'uses' => 'HomeController@faq']);
     Route::get('partneri', ['as' => 'partners', 'uses' => 'HomeController@partners']);
+
+
 });
 
 Route::group(['middleware' => ['auth']], function ()
 {
     Route::get('incident/status/{token}', ['as' => 'incident.status', 'uses' => 'IncidentController@getIncidentStatus']);
+
+    //user profile
+    Route::get('profil/izmjena', ['as' => 'profile.edit', 'uses' => 'UserController@edit']);
+    Route::post('profil/sacuvaj-izmjene', ['as' => 'profile.update', 'uses' => 'UserController@update']);
+
     Route::resource('incident', 'IncidentController');
 });
 
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
+Route::get('profil/{slug?}',['as' =>  'public.profile', 'uses' => 'UserController@show']);

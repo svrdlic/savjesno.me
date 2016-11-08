@@ -70,6 +70,7 @@ class RegisterController extends Controller
             'first_name' => '',
             'last_name' => '',
             'username' => $data['username'],
+            'slug' => User::createUniqueSlug($data['username']),
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

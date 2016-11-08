@@ -72,7 +72,7 @@
                     <li class="topbar-devider"></li>
                     <li><a href="{{ url('/register') }}">Registracija</a></li>
                     @else
-                    <li><a href="#">{{ auth()->user()->username }}</a></li>
+                    <li><a href="{{ route( 'public.profile' ) }}">{{ auth()->user()->username }}</a></li>
                     <li class="topbar-devider"></li>
                     <li><a href="/logout">Odjava</a></li>
                     @endif
